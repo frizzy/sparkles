@@ -1,0 +1,29 @@
+{
+  "name": "sparkles",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bulma": "^0.6.2",
+    "bulma-extensions": "^0.7.6",
+    "classnames": "^2.2.5",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-scripts": "1.1.0",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "shortid": "^2.2.8"
+  },
+  "scripts": {
+    "start": "NODE_PATH=src/ react-scripts start",
+    "build": "NODE_PATH=src/ react-scripts build && node-sass-chokidar src/scss -o src/css",
+    "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
+    "eject": "NODE_PATH=src/ react-scripts eject",
+    "build-css": "node-sass-chokidar src/scss -o src/css",
+    "watch-css": "node-sass-chokidar src/scss -o src/css --watch"
+  },
+  "devDependencies": {
+    "node-sass-chokidar": "^0.0.3",
+    "redux-logger": "^3.0.6"
+  }
+}
