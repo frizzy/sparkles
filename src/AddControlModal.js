@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import AddSwitchControl from './controls/AddSwitchControl';
 
-class AddControlModel extends Component {
+class AddControlModal extends Component {
     state = {
         control: 'none',
         component: null
@@ -86,6 +86,6 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-AddControlModel = connect(mapStateToProps)(AddControlModel);
+AddControlModal = connect(mapStateToProps)(AddControlModal);
 
-export default AddControlModel;
+export default AddControlModal;
