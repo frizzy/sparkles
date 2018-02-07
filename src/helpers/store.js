@@ -2,11 +2,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import logger from 'redux-logger';
 
+import AddControlReducer from '../reducers/AddControlReducer';
+
 const placeholder = (state = {}, action) => (state);
 
 
 const reducers = combineReducers({
-    placeholder
+    placeholder,
+    AddControlReducer
 });
 
 const middleware = applyMiddleware(...[
