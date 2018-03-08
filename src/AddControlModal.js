@@ -8,6 +8,10 @@ class AddControlModal extends Component {
         component: null
     }
 
+    controls = {
+        AddSwitchControl: AddSwitchControl
+    }
+
     closeModalHandler = () => {
         const { dispatch } = this.props;
         dispatch({
@@ -16,22 +20,21 @@ class AddControlModal extends Component {
         });
     }
 
-    saveNewControl = () => {
-      const { dispatch } = this.props;
-      dispatch({
-          type: 'SAVE_CONTROL'
-      });
-    }
-
     selectControlHandler = (event) => {
         // @todo Appears that dynamically loading components in this fashion
         //       does not want to work? Further investigation required.
         if (event.target.value) {
-            const Component = 'Add' + event.target.value + 'Control';
-            this.setState({
-                control: event.target.value,
-                component: <Component />
-            });
+            const componentName = 'Add' + event.target.value + 'Control';
+            const Komponent = this.controls[componentName];
+
+            if (Komponent) {
+              this.setState({
+                  control: event.target.value,
+                  component: <Komponent />
+              });
+            } else {
+              console.error(`Control %c${event.target.value}%c does not exist`, 'font-weight:900; color:black;', 'font-weight:inherit;');
+            }
         } else {
             this.setState({
                 control: 'none',
@@ -57,7 +60,7 @@ class AddControlModal extends Component {
                     </h2>
 
                     <div className="field">
-                        <label className="label">Name</label>
+                        <label className="label">Control Type</label>
                         <div className="control">
                             <div className="select is-rounded">
                               <select onChange={this.selectControlHandler} value={this.state.control}>
