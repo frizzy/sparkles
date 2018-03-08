@@ -19,8 +19,8 @@
     "build": "NODE_PATH=src/ react-scripts build && node-sass-chokidar src/scss -o src/css",
     "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
     "eject": "NODE_PATH=src/ react-scripts eject",
-    "build-css": "node-sass-chokidar src/scss -o src/css",
-    "watch-css": "node-sass-chokidar src/scss -o src/css --watch"
+    "build-css": "node-sass-chokidar src/scss -o src/css --recursive",
+    "watch-css": "yarn run build-css && node-sass-chokidar src/scss -o src/css --watch --recursive"
   },
   "devDependencies": {
     "node-sass-chokidar": "^0.0.3",
