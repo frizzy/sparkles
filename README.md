@@ -51,3 +51,18 @@ Hypothetical draft:
         }
       }
     }
+
+
+## Resource
+
+
+## Virtual Resource
+
+
+## Adapter
+
+
+## Control
+
+
+## UI for purpose
